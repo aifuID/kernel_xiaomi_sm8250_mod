@@ -8,7 +8,7 @@
 
 set -e
 
-TOOLCHAIN_PATH=$HOME/toolchain/google-clang/bin
+TOOLCHAIN_PATH=$HOME/toolchain/kernel_build/google-clang/bin
 GIT_COMMIT_ID=$(git rev-parse --short=8 HEAD)
 TARGET_DEVICE=$1
 
@@ -259,9 +259,9 @@ SET_CONFIG() {
 
 Image_Repack() {
     if [ -f "out/arch/arm64/boot/Image" ]; then
-        echo "The file [out/arch/arm64/boot/Image] exists. AOSP Build successfully."
+        echo "The file [out/arch/arm64/boot/Image] exists. Build successfully."
     else
-        echo "The file [out/arch/arm64/boot/Image] does not exist. Seems AOSP build failed."
+        echo "The file [out/arch/arm64/boot/Image] does not exist. Seems build failed."
         exit 1
     fi
 
