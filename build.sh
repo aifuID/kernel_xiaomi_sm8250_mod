@@ -33,6 +33,11 @@ for cmd in aarch64-linux-gnu-ld arm-linux-gnueabi-ld clang; do
     fi
 done
 
+if [ -d KernelSU ]; then
+    echo "[-] clean KernelSU..."
+    bash KernelSU/kernel/setup.sh --cleanup
+fi
+
 # Enable ccache for speed up compiling 
 export CCACHE_DIR="$HOME/.cache/ccache_mikernel"
 export CC="ccache gcc"
@@ -113,11 +118,6 @@ rm -rf anykernel/
 
 echo "Clone AnyKernel3 for packing kernel (repo: https://github.com/liyafe1997/AnyKernel3)"
 git clone https://github.com/liyafe1997/AnyKernel3 -b kona --single-branch --depth=1 anykernel
-
-# Add date to local version
-local_version_str="-perf"
-local_version_date_str="-$(date +%Y%m%d)-${GIT_COMMIT_ID}-perf"
-sed -i "s/${local_version_str}/${local_version_date_str}/g" arch/arm64/configs/${TARGET_DEVICE}_defconfig
 
 Build_AOSP() {
     echo "Building for AOSP......"
