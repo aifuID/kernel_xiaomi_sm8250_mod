@@ -81,15 +81,10 @@ KSU_VERSION=$2
 TARGET_SYSTEM=$3
 
 echo "TARGET_DEVICE: $TARGET_DEVICE"
-KSU_ENABLE=$([[ "$KSU_VERSION" == "ksu" || "$KSU_VERSION" == "rksu" || "$KSU_VERSION" == "sukisu-kpm" || "$KSU_VERSION" == "sukisu" ]] && echo 1 || echo 0)
+KSU_ENABLE=$([[ "$KSU_VERSION" == "rksu" || "$KSU_VERSION" == "sukisu-kpm" || "$KSU_VERSION" == "sukisu" ]] && echo 1 || echo 0)
 
 # KernelSU setup
 case "$KSU_VERSION" in
-    ksu)
-        KSU_ZIP_STR=KernelSU
-        echo "KSU is enabled"
-        curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
-        ;;
     rksu)
         KSU_ZIP_STR=RKSU
         echo "RKSU is enabled"

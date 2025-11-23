@@ -74,7 +74,6 @@ cd ..
     
 * **KSU_VERSION** (Select KernelSU version):
 
-  * `ksu`: [Official KernelSU (v0.9.5)](https://github.com/tiann/KernelSU/tree/v0.9.5)
   * `rksu`: [RKSU](https://github.com/rsuntk/KernelSU)
   * `sukisu`: [SukiSU-Ultra](https://github.com/SukiSU-Ultra/SukiSU-Ultra)
   * `sukisu-kpm`: [SukiSU-Ultra](https://github.com/SukiSU-Ultra/SukiSU-Ultra)(Enable KPM)
